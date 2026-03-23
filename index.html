@@ -3,48 +3,67 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>QR</title>
+<title>QR Флаєр A4</title>
 
 <style>
+@page {
+  size: A4;
+  margin: 10mm;
+}
+
 body {
   margin:0;
   font-family: Arial, sans-serif;
-  background:#f5efe6;
+  background:#fff;
+}
+
+/* 2x2 сітка */
+.page {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap:8mm;
+  height: 100vh;
+  box-sizing:border-box;
+  padding:5mm;
+}
+
+/* флаєр */
+.flyer {
+  border:1px solid #ccc;
+  border-radius:10px;
+  padding:10px;
+  text-align:center;
   display:flex;
+  flex-direction:column;
   justify-content:center;
   align-items:center;
-  height:100vh;
-  text-align:center;
-}
-
-.box {
   background:#fffaf3;
-  padding:25px;
-  border-radius:15px;
-  box-shadow:0 5px 15px rgba(0,0,0,0.1);
-  max-width:350px;
 }
 
-h1 {
-  font-size:20px;
-  color:#8b0000;
-}
-
-p {
+/* заголовок */
+.flyer h2 {
   font-size:14px;
-  color:#2e2a26;
+  color:#8b0000;
+  margin:5px 0;
 }
 
-img {
-  margin:15px 0;
-  width:220px;
+/* текст */
+.flyer p {
+  font-size:11px;
+  margin:4px 0;
 }
 
-a {
-  display:block;
-  margin-top:10px;
-  color:#1a4d2e;
-  font-weight:bold;
+/* QR */
+.qr img {
+  width:110px;
+  height:110px;
+  margin:6px 0;
+}
+
+/* посилання */
+.link {
+  font-size:9px;
   word-break:break-all;
 }
 </style>
@@ -53,17 +72,47 @@ a {
 
 <body>
 
-<div class="box">
+<div class="page">
 
-  <h1>🇺🇦 Подаруй паску воїну</h1>
+  <!-- 1 -->
+  <div class="flyer">
+    <h2>🇺🇦 Подаруй паску воїну</h2>
+    <p>Благодійна акція для захисників України</p>
+    <div class="qr">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://babikovan.github.io/Give-a-warrior-an-Easter-gift-/" alt="QR">
+    </div>
+    <p class="link">babikovan.github.io/Give-a-warrior-an-Easter-gift-/</p>
+  </div>
 
-  <p>Скануй QR або відкрий сайт:</p>
+  <!-- 2 -->
+  <div class="flyer">
+    <h2>🇺🇦 Подаруй паску воїну</h2>
+    <p>Скануй QR та долучайся до акції</p>
+    <div class="qr">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://babikovan.github.io/Give-a-warrior-an-Easter-gift-/" alt="QR">
+    </div>
+    <p class="link">babikovan.github.io/Give-a-warrior-an-Easter-gift-/</p>
+  </div>
 
-  <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https://babikovan.github.io/Give-a-warrior-an-Easter-gift-/" alt="QR">
+  <!-- 3 -->
+  <div class="flyer">
+    <h2>🙏 Допоможи воїнам</h2>
+    <p>Кожна паска — це підтримка та турбота</p>
+    <div class="qr">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://babikovan.github.io/Give-a-warrior-an-Easter-gift-/" alt="QR">
+    </div>
+    <p class="link">babikovan.github.io/Give-a-warrior-an-Easter-gift-/</p>
+  </div>
 
-  <a href="https://babikovan.github.io/Give-a-warrior-an-Easter-gift-/" target="_blank">
-    https://babikovan.github.io/Give-a-warrior-an-Easter-gift-/
-  </a>
+  <!-- 4 -->
+  <div class="flyer">
+    <h2>🇺🇦 Разом до перемоги</h2>
+    <p>Долучайся до великодньої ініціативи</p>
+    <div class="qr">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://babikovan.github.io/Give-a-warrior-an-Easter-gift-/" alt="QR">
+    </div>
+    <p class="link">babikovan.github.io/Give-a-warrior-an-Easter-gift-/</p>
+  </div>
 
 </div>
 
